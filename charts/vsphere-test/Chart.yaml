@@ -1,0 +1,10 @@
+apiVersion: v2
+name: vsphere-test
+description: DO NOT USE
+version: 0.6.1
+appVersion: 0.6.1
+icon: https://i.redd.it/rwknyu50jmw11.png
+annotations:
+  catalog.cattle.io/type: cluster-template
+  catalog.cattle.io/namespace: fleet-default
+

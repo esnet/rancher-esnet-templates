@@ -1,0 +1,70 @@
+cloudprovider: vsphere
+
+cloudCredentialSecretName: 
+
+rancher:
+  cattle:
+    url: rancher-staging-west.es.net
+
+cluster:
+  name: rke2-cluster
+  config:
+    kubernetesVersion: v1.30.7+rke2r1
+    enableNetworkPolicy: true
+    localClusterAuthEndpoint:
+      enabled: false
+    globalConfig:
+      systemDefaultRegistry: docker.io
+      cni: cilium
+      docker: false
+      disable_scheduler: false
+      disable_cloud_controller: false
+      disable_kube_proxy: false
+      etcd_expose_metrics: false
+      profile: ''
+      selinux: false
+      secrets_encryption: false
+      write_kubeconfig_mode: 0600
+      use_service_account_credentials: false
+      protect_kernel_defaults: false
+      cloud_provider_name: 'vsphere'
+
+nodepools:
+  - name: control-plane-nodes
+    quantity: 3
+    etcd: true
+    controlplane: true
+    worker: false
+    paused: false
+    datacenter: '/LBNL'
+    datastore: '/LBNL/datastore/vsanDatastore_lbl'
+    creationType: 'template'
+    cloneFrom: '/LBNL/vm/Templates/Rancher/kapil-test'
+    cpuCount: 8
+    memorySize: 8192
+    diskSize: 10000
+    pool: '/LBNL/host/lbnl-clstr4/Resources/RPn_rancher'
+    vappIpallocationpolicy: "fixedAllocated"
+    vappIpprotocol: "IPv4"
+
+    vappTransport: "com.vmware.guestInfo"
+
+  - name: worker-nodes
+    quantity: 3
+    etcd: false
+    controlplane: false
+    worker: true
+    paused: false
+    datacenter: '/LBNL'
+    datastore: '/LBNL/datastore/vsanDatastore_lbl'
+    creationType: 'template'
+    cloneFrom: '/LBNL/vm/Templates/Rancher/kapil-test'
+    cpuCount: 8
+    memorySize: 8192
+    diskSize: 10000
+    pool: '/LBNL/host/lbnl-clstr4/Resources/RPn_rancher'
+    vappIpallocationpolicy: "fixedAllocated"
+
+    vappIpprotocol: "IPv4"
+    vappTransport: "com.vmware.guestInfo"
+
