@@ -16,6 +16,8 @@ cluster:
     globalConfig:
       systemDefaultRegistry: docker.io
       cni: cilium
+      clustercidr: '["10.42.0.0/16","fd00:10:42::/56"]'
+      servicecidr: '["10.96.0.0/16","fd00:10:96::/112"]'
       docker: false
       disable_scheduler: false
       disable_cloud_controller: false
