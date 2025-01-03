@@ -39,7 +39,7 @@ nodepools:
     datacenter: '/LBNL'
     datastore: '/LBNL/datastore/vsanDatastore_lbl'
     creationType: 'template'
-    cloneFrom: '/LBNL/vm/Templates/Rancher/kapil-test'
+    cloneFrom: '/LBNL/vm/Templates/Rancher/helmchartrancher'
     cpuCount: 8
     memorySize: 8192
     diskSize: 10000
@@ -58,7 +58,7 @@ nodepools:
     datacenter: '/LBNL'
     datastore: '/LBNL/datastore/vsanDatastore_lbl'
     creationType: 'template'
-    cloneFrom: '/LBNL/vm/Templates/Rancher/kapil-test'
+    cloneFrom: '/LBNL/vm/Templates/Rancher/helmchartrancher'
     cpuCount: 8
     memorySize: 8192
     diskSize: 10000
