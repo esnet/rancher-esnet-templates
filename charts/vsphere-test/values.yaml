@@ -1,6 +1,6 @@
 cloudprovider: vsphere
 
-cloudCredentialSecretName: 
+cloudCredentialSecretName: cc-kx82l
 
 rancher:
   cattle:
