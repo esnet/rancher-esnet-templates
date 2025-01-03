@@ -43,6 +43,7 @@ nodepools:
     cpuCount: 8
     memorySize: 8192
     diskSize: 10000
+    network: 'ds06.198.128.131.1-24'
     pool: '/LBNL/host/lbnl-clstr4/Resources/RPn_rancher'
     vappIpallocationpolicy: "fixedAllocated"
     vappIpprotocol: "IPv4"
@@ -62,6 +63,7 @@ nodepools:
     cpuCount: 8
     memorySize: 8192
     diskSize: 10000
+    network: 'ds06.198.128.131.1-24'
     pool: '/LBNL/host/lbnl-clstr4/Resources/RPn_rancher'
     vappIpallocationpolicy: "fixedAllocated"
     vappProperty: '["ipaddress=ip:ds06.198.128.131.1-24",]'
